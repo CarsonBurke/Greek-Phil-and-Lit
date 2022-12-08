@@ -1,17 +1,4 @@
-import stock1 from './images/stock1.jpg'
-import stock2 from './images/stock2.jpg'
-import hero from './images/heroBG.png'
-import eagle from './images/eagle.png'
-import basicMechanics from './images/basicMechanics.png'
-import qubitChip from './images/qubitChip.png'
-import qubit from './images/qubit.png'
-import systemOne from './images/systemOne.png'
-import quantumComputer from './images/quantumComputer.png'
-import quantomComputerBG from './images/quantumComputerBG.png'
-import science from './images/science.png'
-import greenEnergy from './images/greenEnergy.png'
-import government from './images/government.jpg'
-import future from './images/future.png'
+import example from './images/example.png
 
 export interface SlideType {
     title: string
@@ -27,6 +14,13 @@ export interface SlideType {
 
 export const slides: SlideType[] = [
     {
+        title: 'Greek Philosophy and Literature',
+        text: `By Carson`,
+        BGImage: example,
+        align: 'center',
+        theme: 'glassWhite',
+    },
+    /*{
         title: 'Quantum Computing',
         text: `By Nathan and Carson`,
         BGImage: hero,
@@ -105,5 +99,5 @@ export const slides: SlideType[] = [
         BGImage: hero,
         align: 'center',
         theme: 'glassWhite',
-    },
+    },*/
 ]
