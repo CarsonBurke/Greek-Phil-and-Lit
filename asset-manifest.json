@@ -1,0 +1,14 @@
+{
+  "files": {
+    "main.css": "/Greek-Phil-and-Lit/static/css/main.475a00e3.css",
+    "main.js": "/Greek-Phil-and-Lit/static/js/main.a3c3b85e.js",
+    "static/media/socrates.png": "/Greek-Phil-and-Lit/static/media/socrates.af16c4e4cf7d00352c67.png",
+    "index.html": "/Greek-Phil-and-Lit/index.html",
+    "main.475a00e3.css.map": "/Greek-Phil-and-Lit/static/css/main.475a00e3.css.map",
+    "main.a3c3b85e.js.map": "/Greek-Phil-and-Lit/static/js/main.a3c3b85e.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.475a00e3.css",
+    "static/js/main.a3c3b85e.js"
+  ]
+}
