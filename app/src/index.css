@@ -113,6 +113,10 @@ a {
     box-shadow: rgba(0, 0, 0, 0.4) 0 16px 28px 0, inset rgba(0, 0, 0, 0.2) 0 0 0 1000px;
 }
 
+.hidden {
+    display: none;
+}
+
 .row {
     display: flex;
     flex-direction: row;

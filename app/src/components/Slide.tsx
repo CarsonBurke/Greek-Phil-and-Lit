@@ -1,34 +1,54 @@
 import React from "react"
-import { SlideType } from "../config"
+import { slideChild, slides, SlideType } from "../config"
 import './slide.css'
 
 function generateImage(image: string | undefined) {
 
     if (!image) return
 
-    return <img src={image} alt="" className="slideImage animate floatUp" />
+    return <img src={image} alt="" className="slideImage" />
 }
 
-export function Slide(opts: SlideType) {
+function createSlideChildrenEls(slideChildren: slideChild[]) {
+
+    const slideChildrenEls = []
+
+    for (const slideChild of slideChildren) {
+
+        slideChildrenEls.push(
+            <div className={`slideChild hidden ${slideChild.theme}Theme ${slideChild.align}Align`}>
+    
+            <div className={`slideTopper`}>
+    
+                <h2 className="slideHeader">{slideChild.title}</h2>
+    
+            </div>
+    
+            <div className="slideContent">
+    
+                <p className="slideText">{slideChild.text}</p>
+    
+                {generateImage(slideChild.image)}
+    
+            </div>
+        </div>
+        )
+    }
+
+    return slideChildrenEls
+}
+
+interface SlideArgs {
+    slideIndex: number
+}
+
+export function Slide(args: SlideArgs) {
+
+    const slide = slides[args.slideIndex]
 
     return (
-        <section className={`slideContainer parallaxifyBg ${opts.align}Align`} style={{ backgroundImage: `linear-gradient(180deg, rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.1)), url(${opts.BGImage})` }}>
-            <div className={`slideParent ${opts.theme}Theme animate floatUp`}>
-
-                <div className={`slideTopper`}>
-
-                    <h2 className="slideHeader animate floatUp">{opts.title}</h2>
-
-                </div>
-
-                <div className="slideContent">
-
-                    <p className="slideText animate floatUp">{opts.text}</p>
-
-                    {generateImage(opts.image)}
-
-                </div>
-            </div>
+        <section className={`slideParent parallaxifyBg hidden`} style={{ backgroundImage: `linear-gradient(180deg, rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.1)), url(${slide.BGImage})` }}>
+            { createSlideChildrenEls(slide.slideChildren) } 
         </section>
     )
 }

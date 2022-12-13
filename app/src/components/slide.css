@@ -1,4 +1,4 @@
-.slideContainer {
+.slideParent {
     width: calc(100vw - 10%);
     height: 100vh;
     padding: 0 5%;
@@ -6,9 +6,10 @@
     align-items: center;
     background-position: center;
     background-size: cover;
+    position: relative;
 }
 
-.slideParent {
+.slideChild {
     display: flex;
     flex-direction: column;
     text-align: center;
@@ -16,16 +17,47 @@
     max-width: 40vw;
 }
 
+.slideShow {
+    opacity: 1;
+    animation: slideShow 0.5s;
+}
+
+@keyframes slideShow {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+.slideHide {
+    opacity: 0;
+    animation: slideHide 0.5s;
+}
+
+@keyframes slideHide {
+    0% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+    }
+}
+
 .leftAlign {
-    justify-content: left;
+    left: 25%;
 }
 
 .centerAlign {
-    justify-content: center;
+    left: 0;
+    right: 0;
+    width: fit-content;
+    margin: auto;
 }
 
 .rightAlign {
-    justify-content: right;
+    left: 75%;
 }
 
 .glassWhiteTheme {
@@ -79,7 +111,7 @@
 }
 
 .slideText {
-    font-size: 18px;
+    font-size: 1.25rem;
     font-weight: 500;
     padding: 15px;
 }

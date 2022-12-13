@@ -1,24 +1,58 @@
-import example from './images/example.png
+import society from './images/society.png'
+import socrates from './images/socrates.png'
+import plato from './images/plato.png'
 
-export interface SlideType {
+export interface slideChild {
     title: string
     /**
      * Rich text expansion on the title
      */
     text: string
-    BGImage: string
     image?: string
     align: 'center' | 'left' | 'right'
     theme?: 'glassBlack' | 'glassWhite'
 }
 
+export interface SlideType {
+
+    slideChildren: slideChild[]
+    BGImage: string
+}
+
 export const slides: SlideType[] = [
     {
-        title: 'Greek Philosophy and Literature',
-        text: `By Carson`,
-        BGImage: example,
-        align: 'center',
-        theme: 'glassWhite',
+        BGImage: society,
+        slideChildren: [
+            {
+                title: 'Greek Philosophy and Literature',
+                text: `By Carson`,
+                align: 'center',
+                theme: 'glassWhite',
+            },
+            {
+                title: 'Second thing',
+                text: `Hey ;)`,
+                align: 'left',
+                theme: 'glassWhite',
+            }
+        ]
+    },
+    {
+        BGImage: socrates,
+        slideChildren: [
+            {
+                title: 'Socrates',
+                text: `By Carson`,
+                align: 'center',
+                theme: 'glassWhite',
+            },
+            {
+                title: 'Plato',
+                text: `By Carson`,
+                align: 'right',
+                theme: 'glassWhite',
+            },
+        ]
     },
     /*{
         title: 'Quantum Computing',
