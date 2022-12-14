@@ -1,13 +1,15 @@
 import society from './images/society.png'
 import socrates from './images/socrates.png'
+import socratesPFP from './images/socratesPFP.png'
 import plato from './images/plato.png'
+import aristotle from './images/aristotle.png'
 
-export interface slideChild {
+export interface SlideChild {
     title: string
     /**
      * Rich text expansion on the title
      */
-    text: string
+     texts?: string[]
     image?: string
     align: 'center' | 'left' | 'right'
     theme?: 'glassBlack' | 'glassWhite'
@@ -15,7 +17,7 @@ export interface slideChild {
 
 export interface SlideType {
 
-    slideChildren: slideChild[]
+    slideChildren: SlideChild[]
     BGImage: string
 }
 
@@ -25,113 +27,157 @@ export const slides: SlideType[] = [
         slideChildren: [
             {
                 title: 'Greek Philosophy and Literature',
-                text: `By Carson`,
+                texts: [
+                    `By Carson Burke`,
+                ],
                 align: 'center',
                 theme: 'glassWhite',
             },
-            {
-                title: 'Second thing',
-                text: `Hey ;)`,
-                align: 'left',
-                theme: 'glassWhite',
-            }
         ]
     },
     {
         BGImage: socrates,
         slideChildren: [
             {
-                title: 'Socrates',
-                text: `By Carson`,
+                title: 'Greek Literature',
+                texts: [`Literature was a mainstay of ancient Greek culture, especially in schools and the upper classes`],
                 align: 'center',
                 theme: 'glassWhite',
             },
             {
+                title: 'Homer',
+                texts: [
+                    `Most famous Greek author`,
+                    `Wrote many epics`,
+                    `The Iliad and Odyssey poems explore events of the Trojan War`
+                ],
+                image: require('./images/homer.png'),
+                align: 'right',
+                theme: 'glassWhite',
+            },
+            {
+                title: 'Hesiod',
+                texts: [
+                    `Works and Days explored the life of a Greek peasant`,
+                    `Theogany described the origin of Greek gods and the universe`
+                ],
+                image: require('./images/hesiod.png'),
+                align: 'left',
+                theme: 'glassWhite',
+            },
+        ]
+    },
+    {
+        BGImage: require('./images/socrates.png'),
+        slideChildren: [
+            {
+                title: 'Greek Philosophers',
+                texts: [
+                    `Philosophy flourished in ancient Greece`,
+                    'Socrates, Plato, and Aristotle were the most notable',
+                    `Includes science, ethics, religion, knowledge, purpose, genesis and much more`
+                ],
+                align: 'center',
+                theme: 'glassWhite',
+            },
+            {
+                title: 'Socrates',
+                texts: [
+                    `Created the Socratic Method and Socratic Irony`,
+                    `Very interested in ethics`,
+                    `Thought a good spirit motivated human action`,
+                    `Believed evil was the consequence of ignorance`,
+                    `Was killed for his agnosticism and questioning of gods`,
+                ],
+                image: require('./images/socratesPFP.png'),
+                align: 'left',
+                theme: 'glassWhite',
+            },
+            {
                 title: 'Plato',
-                text: `By Carson`,
+                texts: [
+                `Student of Socrates, documented his work`,
+                `Wrote the first book on political science`,
+                `Prescribed that philosophers should be kings`,
+                `Tutor to Alexander the Great`,
+],
+                image: require('./images/plato.png'),
+                align: 'center',
+                theme: 'glassWhite',
+            },
+            {
+                title: 'Aristotle',
+                texts: [
+                    `Student of Plato`,
+                    `Very interested in biology and science`,
+                    `Created the logical syllogism, still used to date`,
+                    `Established fallacies`,
+                    `Added the "try to prove your theory wrong" part to the scientific method`
+                ],
+                image: require('./images/aristotle.png'),
                 align: 'right',
                 theme: 'glassWhite',
             },
         ]
     },
-    /*{
-        title: 'Quantum Computing',
-        text: `By Nathan and Carson`,
-        BGImage: hero,
-        align: 'center',
-        theme: 'glassWhite',
+    {
+        BGImage: require('./images/philosphy.jpg'),
+        slideChildren: [
+            {
+                title: 'Greek Philosophical Concepts',
+                align: 'center',
+                theme: 'glassWhite',
+            },
+            {
+                title: 'Socratic Method',
+                texts: [
+                    `Expose inconsistent arguments and ignorance through a series of targetted questions`
+                ],
+                image: require('./images/why.png'),
+                align: 'right',
+                theme: 'glassWhite',
+            },
+            {
+                title: 'Socratic Irony',
+                texts: [
+                    `Faming ignorance to draw out arguments to apply the socratic method to`,
+                    `"Explain to me how the flat earth works"`
+                ],
+                image: require('./images/smallbrain.png'),
+                align: 'center',
+                theme: 'glassWhite',
+            },
+            {
+                title: 'Logical Syllogism',
+                texts: [
+                    `A series of premises leading to a conclusion`,
+                    `Allows you to make arguments with a clear structure`,
+                    `1. All humans have a brain 2. Carson is a human 3. therefore Carson has a brain`
+            ],
+                image: require('./images/aristotle2.png'),
+                align: 'left',
+                theme: 'glassWhite',
+            },
+            {
+                title: 'Fallacies',
+                texts: [
+                    `Illogical arguments that often sound convincing`,
+                    `"Everyone I know says fentanyl is safe, therefore it is safe"`
+                ],
+                image: require('./images/fallacy.png'),
+                align: 'center',
+                theme: 'glassWhite',
+            },
+        ]
     },
     {
-        title: 'Basic mechanics',
-        text: `Simply put, the study of quantum mechanics in relation to quantum computer R&D. Includes thoery, optimizing the computers, making them cheaper, mass producible, and stable`,
-        BGImage: basicMechanics,
-        align: 'right',
-        theme: 'glassWhite',
+        BGImage: require('./images/platoAcademy.png'),
+        slideChildren: [
+            {
+                title: 'The End',
+                align: 'center',
+                theme: 'glassWhite',
+            },
+        ]
     },
-    {
-        title: 'Quantum Computers',
-        text: `All quantum computers do is utilize quantum bits to perform calculations. Quantum computers have to be stored at -270c+ to stop quantum decoherence`,
-        BGImage: quantomComputerBG,
-        image: quantumComputer,
-        align: 'left',
-        theme: 'glassWhite',
-    },
-    {
-        title: 'The IBM Eagle',
-        text: `The IBM Eagle is the world's most powerful 127 qubit quantum computer. For reference, conventional computers can have trillions of bits.`,
-        BGImage: eagle,
-        image: systemOne,
-        align: 'right',
-        theme: 'glassWhite',
-    },
-    {
-        title: 'Qubits',
-        text: `Quantum bits, similar to conventional computing bits, have a binary state (0 or 1). They are photons or electrons with a positive or negative charge.`,
-        BGImage: qubitChip,
-        image: qubit,
-        align: 'left',
-        theme: 'glassWhite',
-    },
-    {
-        title: 'Scientific Connections',
-        text: `Computers are used everywhere in science, (AI, protein folding) and a significant limitation is computing power. Quantum computers can fix that`,
-        BGImage: science,
-        align: 'right',
-        theme: 'glassWhite',
-    },
-    {
-        title: 'Socio-economic Benefits',
-        text: `Benefits to research, primarily artificial intelligence that will affect broader society. Development of green energies, urban planning, agriculture, and more can be optimized by AI`,
-        BGImage: greenEnergy,
-        align: 'left',
-        theme: 'glassWhite',
-    },
-    {
-        title: 'Who is Developing This?',
-        text: `Tech giants who want to harness this technology for profits. More importantly, governments worldwide that provide billions of dollars in grants`,
-        BGImage: government,
-        align: 'right',
-        theme: 'glassWhite',
-    },
-    {
-        title: 'The Future of Quantum Computing',
-        text: `Benefits to AI and research, possibly astronomic consequences such as government, individual or corporate control; empowered hackers, or more deadly warfare; all because of the incredible computational power`,
-        BGImage: future,
-        align: 'left',
-        theme: 'glassWhite',
-    },
-    {
-        title: 'Bibliography',
-        text: `https://docs.google.com/document/d/1NErXi0-EWLkPUAakeNA94AUweDPRItjSJgo6vo-d82k/edit?usp=sharing`,
-        BGImage: '',
-        align: 'center',
-        theme: 'glassWhite',
-    },
-    {
-        title: 'Quantum Computing',
-        text: `By Nathan and Carson`,
-        BGImage: hero,
-        align: 'center',
-        theme: 'glassWhite',
-    },*/
 ]

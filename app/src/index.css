@@ -31,6 +31,10 @@ body {
     --tertiary: rgb(38, 41, 46);
 }
 
+body::-webkit-scrollbar {
+    width: 0;
+}
+
 main {}
 
 a {
