@@ -1,8 +1,4 @@
 import society from './images/society.png'
-import socrates from './images/socrates.png'
-import socratesPFP from './images/socratesPFP.png'
-import plato from './images/plato.png'
-import aristotle from './images/aristotle.png'
 
 export interface SlideChild {
     title: string
@@ -23,7 +19,7 @@ export interface SlideType {
 
 export const slides: SlideType[] = [
     {
-        BGImage: society,
+        BGImage: require('./images/society.png'),
         slideChildren: [
             {
                 title: 'Greek Philosophy and Literature',
@@ -36,7 +32,7 @@ export const slides: SlideType[] = [
         ]
     },
     {
-        BGImage: socrates,
+        BGImage: require('./images/literature.png'),
         slideChildren: [
             {
                 title: 'Greek Literature',
