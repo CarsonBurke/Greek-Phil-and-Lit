@@ -125,11 +125,11 @@ class SlideManager {
 
   async hideSlideChild(slideChild: Element) {
 
-    slideChild.classList.add('hide')
+    slideChild.classList.add('hideSlideChild')
 
     await timer(0.5)
 
-    slideChild.classList.remove('hide')
+    slideChild.classList.remove('hideSlideChild')
     slideChild.classList.add('hidden')
   }
 

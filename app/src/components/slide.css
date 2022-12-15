@@ -55,6 +55,24 @@
     }
 }
 
+.hideSlideChild {
+    animation: hideSlideChild 0.5s;
+    opacity: 0;
+}
+
+@keyframes hideSlideChild {
+    0% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+    75% {
+        opacity: 0;
+    }
+    100% {
+        transform: translateY(30px);
+    }
+}
+
 .leftAlign {
     left: 10%;
 }
